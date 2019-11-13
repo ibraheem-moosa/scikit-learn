@@ -317,7 +317,7 @@ class OneHotEncoder(_BaseEncoder):
                                 ["Category: {}, Feature: {}".format(c, v)
                                     for c, v in missing_drops])))
                 raise ValueError(msg)
-            return np.array([np.where(cat_list == val)[0][0]
+            return np.array([np.asarray(cat_list == val).nonzero()[0][0]
                              for (val, cat_list) in
                              zip(self.drop, self.categories_)], dtype=np.int_)
         else:
