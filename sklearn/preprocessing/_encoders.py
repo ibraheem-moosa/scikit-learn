@@ -447,9 +447,9 @@ class OneHotEncoder(_BaseEncoder):
                                          for cats in self.categories_)
 
         # validate shape of passed X
-        msg = ("Shape of the passed X data is not correct. Expected {0} "
-               "columns, got {1}.")
         if X.shape[1] != n_transformed_features:
+            msg = ("Shape of the passed X data is not correct. Expected {0} "
+                   "columns, got {1}.")
             raise ValueError(msg.format(n_transformed_features, X.shape[1]))
 
         # create resulting array of appropriate dtype
