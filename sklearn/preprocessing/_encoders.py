@@ -273,6 +273,7 @@ class OneHotEncoder(_BaseEncoder):
         self.dtype = dtype
         self.handle_unknown = handle_unknown
         self.drop = drop
+        self._validate_keywords()
 
     def _validate_keywords(self):
         if self.handle_unknown not in ('error', 'ignore'):
