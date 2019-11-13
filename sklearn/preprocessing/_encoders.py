@@ -309,7 +309,7 @@ class OneHotEncoder(_BaseEncoder):
                                             len(self.drop)))
             missing_drops = [(i, val) for i, val in enumerate(self.drop)
                              if val not in self.categories_[i]]
-            if any(missing_drops):
+            if missing_drops:
                 msg = ("The following categories were supposed to be "
                        "dropped, but were not found in the training "
                        "data.\n{}".format(
