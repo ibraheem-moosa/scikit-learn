@@ -342,7 +342,6 @@ class OneHotEncoder(_BaseEncoder):
         -------
         self
         """
-        self._validate_keywords()
         self._fit(X, handle_unknown=self.handle_unknown)
         self.drop_idx_ = self._compute_drop_idx()
         return self
@@ -367,7 +366,6 @@ class OneHotEncoder(_BaseEncoder):
         X_out : sparse matrix if sparse=True else a 2-d array
             Transformed input.
         """
-        self._validate_keywords()
         return super().fit_transform(X, y)
 
     def transform(self, X):
